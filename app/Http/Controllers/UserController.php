@@ -43,7 +43,7 @@ class UserController extends Controller
 
         $title = 'list of user';
 
-        return view('Users',compact('title','Users'));
+        return view('Users.index',compact('title','Users'));
 
 
 
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     	 // return "Detalles del usuario: {$id}";
 
-         return view('user-show',compact('id'));
+         return view('users.show',compact('id'));
     }
 
 

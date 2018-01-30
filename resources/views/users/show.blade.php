@@ -13,12 +13,14 @@
 
 		<div class="col-4 sidebar ">
 			  <button type="button"  class="btn btn-danger">done</button>
-			 @include('sidebar')
+			 @include('siderbar')
 		</div>
 
 	</div>
 
 
+
+@include('footer')
 
 @include('footer')
 
