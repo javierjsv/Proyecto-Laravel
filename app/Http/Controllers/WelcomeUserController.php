@@ -15,7 +15,7 @@ class WelcomeUserController extends Controller
     	 if ($nickname) {
         return "Bienvenido {$name}, tu apodo es {$nickname}";
     } else {
-        return "Bienvenido {$name}, no tienes apodo";
+        return "Bienvenido {$name},  no tienes apodo";
     }
     }
 }

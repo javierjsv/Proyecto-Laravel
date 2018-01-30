@@ -8,26 +8,55 @@ class UserController extends Controller
 {
     public function index(){
 
-    	$Users = [
+// si la list esta vacia no muestre usuario de lo contrario muestrelo
 
-    		'johan',
-    		'javier',
-    		'solis',
-    		 'velasco',
-    		'<script>alert("Clicker")</script>'
+        if (Request()->has('empty')) {
 
-    	];
+            $Users = [];
+         
+            # code...
+        } else {
 
-    	return view('Users',[
-    		'Users' => $Users,
-    		'title' => 'List of User'
-    	]);
+
+        $Users = [
+
+            'johan',
+            'javier',
+            'solis',
+             'velasco',
+            '<script>alert("Clicker")</script>'
+
+        ];
+        }
+        
+
+        // 1) forma de mostrar vista en el controlador
+
+    	// return view('Users',[
+    	// 	'Users' => $Users,
+    	// 	'title' => 'List of User'
+    	// ]);
+
+
+        // 2) Forma de mostrar vita en el controlador
+
+
+        $title = 'list of user';
+
+        return view('Users',compact('title','Users'));
+
+
+
+
+
     }
 
 
     public function show($id){
 
-    	 return "Detalles del usuario: {$id}";
+    	 // return "Detalles del usuario: {$id}";
+
+         return view('user-show',compact('id'));
     }
 
 
