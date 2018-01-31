@@ -8,14 +8,14 @@ class CreateProfessionsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *->unique() sirve para restrisgir duplicaciones
      * @return void
      */
     public function up()
     {
         Schema::create('professions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',100);
+            $table->string('title',100)->unique();
             $table->timestamps();
         });
     }
