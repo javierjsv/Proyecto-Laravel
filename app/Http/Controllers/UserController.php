@@ -3,31 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\Users;
 class UserController extends Controller
 {
     public function index(){
 
+
+
+// debe importa la clase arriba esta la forma correcta
+
+
+        $Users = DB::table('users')->get();
+        // $users = User::all();
+
+
+        // mostrar con arreglo
+        //dd($Users);
+        //print_r($Users->name);die();
+
+
+
+       
+
+
 // si la list esta vacia no muestre usuario de lo contrario muestrelo
 
-        if (Request()->has('empty')) {
 
-            $Users = [];
+
+
+// tabla con datos estaticas
+        // if (Request()->has('empty')) {
+
+        //     $Users = [];
          
-            # code...
-        } else {
+        //     # code...
+        // } else {
 
 
-        $Users = [
+        // $Users = [
 
-            'johan',
-            'javier',
-            'solis',
-             'velasco',
-            '<script>alert("Clicker")</script>'
+        //     'johan',
+        //     'javier',
+        //     'solis',
+        //      'velasco',
+        //     '<script>alert("Clicker")</script>'
 
-        ];
-        }
+        // ];
+        // }
         
 
         // 1) forma de mostrar vista en el controlador
@@ -41,9 +64,8 @@ class UserController extends Controller
         // 2) Forma de mostrar vita en el controlador
 
 
-        $title = 'list of user';
-
-        return view('Users.index',compact('title','Users'));
+       
+        return view('users.index',compact('Users'));
 
 
 
